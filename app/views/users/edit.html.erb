@@ -1,0 +1,27 @@
+<%= render "shared/header"%>
+
+<%= form_with model: @user, local: true do |f| %>
+  <div class="field">
+    <%= f.label "ニックネーム" %><br />
+    <%= f.text_field :nickname, autocomplete: "Nickname" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "県" %><br />
+    <%= f.collection_select(:region_id, Region.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "市" %><br />
+    <%= f.text_field :city, autocomplete: "City" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

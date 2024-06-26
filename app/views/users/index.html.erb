@@ -1,0 +1,13 @@
+<%= render "shared/header"%>
+
+<%= month_calendar do |date| %>
+  <%= date.day %>
+
+  <% @events.each do |event| %>
+    <% if (event.start_time.to_date..event.end_time.to_date).cover?(date) && event.user_id == current_user.id %>
+      <div>
+        <%= link_to event.title, event_path(event.id) %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

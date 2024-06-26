@@ -1,0 +1,49 @@
+<%= render "shared/header"%>
+
+<div class="user-nickname">
+  <div clss="user-box">
+    <div class="category-box">ニックネーム</div>
+    <span class="user-nickname">
+      <%= @user.nickname %>
+    </span>
+  </div>
+  <div clss="user-box">
+    <div class="category-box">住所</div>
+    <span class="item-postage">
+      <%= @user.region[:name] %>
+    </span>
+      <span class="item-postage">
+      <%= @user.city %>
+    </span>
+  </div>
+  <div class="edit-btn">
+    <%= link_to "編集", edit_user_path(current_user) %>
+  </div>
+</div>
+<br/>
+<br/>
+<p class="user-events-all"><%= @user.nickname %>さんの投稿一覧</p>
+<br/>
+<% @events.each do |event| %>
+  <div class="event-box">
+    <div class="event-title">
+      <%= event.title %>
+    </div>
+    <div class="event-content">
+      <%= event.content %>
+    </div>
+    <div class="event-content">
+      開始日<%= event.start_time %>
+    </div>
+    <div class="event-content">
+      終了日<%= event.end_time %>
+    </div>
+    <div class="edit-btn">
+      <%= link_to "編集", edit_event_path(event.id) %>
+    </div>
+    <div class="delete-btn">
+      <%= link_to "削除", event_path(event.id), data: {turbo_method: :delete} %>
+    </div>
+
+  </div>
+<% end %>

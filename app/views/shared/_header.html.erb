@@ -1,0 +1,19 @@
+<header class="header-area">
+  <div class="menu">
+    <div class="left-menu">
+      <div class="title">
+        <%= link_to "Shopping-Calendar", users_path, class: "title_logo" %>
+      </div>
+    </div>
+    <div class="right-menu">
+      <div class="nav-bar">
+        <ul class="lists">
+          <li><%= link_to '新規メモ', new_event_path, class: "memo_new" %> </li>
+          <li><%= link_to 'メモ一覧', events_path, class: "memo_all" %> </li>
+          <li><%= link_to current_user.nickname, user_path(current_user), class: "user_name" %> </li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
