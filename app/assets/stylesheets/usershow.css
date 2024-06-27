@@ -1,0 +1,136 @@
+.user-profile_box {
+  display: flex;
+  justify-content: center;
+}
+
+.user-profile {
+  margin-top: 30px;
+  width: 500px;
+  text-align: center;
+}
+
+
+
+.user_nickname_box{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dotted black;
+  margin-top: 10px;
+}
+
+.category-box {
+  width: 200px;
+  text-align: center;
+}
+
+.user-nickname {
+  width: 200px;
+  text-align: center;
+}
+
+.user_address_box {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dotted black;
+  margin: 10px 0;
+}
+
+.user_address {
+  width: 200px;
+  text-align: center;
+}
+
+.user_edit_btn {
+  text-align: center;
+  margin-right: 50px;
+  background-color: gray;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.user_edit_link {
+  text-decoration: none;
+  color: azure;
+}
+
+.user-events-all {
+  text-align: center;
+}
+
+.event_boxes {
+  display: flex;
+  justify-content: center;
+}
+
+.event-box {
+  display: flex;
+  width: 700px;
+  height: 50px;
+  border-bottom: 1px dotted black;
+  margin-bottom: 10px;
+}
+
+.event-box_header {
+  display: flex;
+  width: 700px;
+  height: 50px;
+  border-bottom: 3px double black;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: blue;
+}
+
+.event-title {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 5;
+}
+
+.event-content-main {
+  width: 300px;
+  line-height: 5;
+  text-align: center;
+}
+
+.start_time_only {
+  width: 200px;
+  text-align: center;
+  line-height: 5;
+}
+
+.event-content {
+  width: 200px;
+  text-align: center;
+}
+
+.event_btn {
+  text-align: center;
+  margin-right: 50px;
+  background-color: gray;
+  border-radius: 5px;
+  width: 100px;
+  height: 20px;
+  margin: 3px 0;
+}
+
+.event_edit_link {
+  text-decoration: none;
+  color: azure;
+}
+
+.event_delete_link {
+  text-decoration: none;
+  color: darkred;  
+}
+
+.event-content_label {
+  width: 200px;
+  text-align: center;
+  line-height: 5;
+}
+
+.favorite{
+  font-size: 25px;
+  color: red;
+}

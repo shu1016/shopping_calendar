@@ -1,24 +1,8 @@
 <%= render "shared/header"%>
 
 <div class="events">
+  <%= render "shared/event_header" %>
   <% @events.each do |event| %>
-    <div>
-      <%= event.title %>
-    </div>
-    <div>
-      <%= event.content %>
-    </div>
-    <div>
-      <%= event.start_time %>
-    </div>
-    <div>
-      <%= event.end_time %>
-    </div>
-    <div>
-      <%= event.user.region[:name] %>
-    </div>
-    <div>
-      <%= event.user[:city] %>
-    </div>
+    <%= render "shared/eventsindex", event: event %>
   <% end %>
 </div>

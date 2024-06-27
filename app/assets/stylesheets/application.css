@@ -72,21 +72,6 @@
 .memo_new, .user_name, .logout, .memo_all {
   text-decoration: none; /* noneを指定すると下線が消えます */
   color: black; /* ここに任意の色を指定します */
-}
-
-.memo_new {
-  font-size: 20px;
-}
-
-.memo_all {
-  font-size: 20px;
-}
-
-.user_name {
-  font-size: 20px;
-}
-
-.logout {
   font-size: 20px;
 }
 

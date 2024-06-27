@@ -1,0 +1,33 @@
+<% form = local_assigns[:event] %>
+
+<div class="event_boxes">
+  <div class="event-box">
+    <div class="event-title">
+      <%= event.title %>
+    </div>
+    <div class="event-content-main">
+      <%= event.content %>
+    </div>
+    <div class="event-content">
+      <% if event.start_time == event.end_time %>
+        <div class="start_time_only">
+          <%= event.start_time %>
+        </div>
+      <% else %>
+        <%= event.start_time %> <br/>～ <%= event.end_time %>
+      <% end %>
+    </div>
+    <% if current_user == event.user && local_assigns[:show_actions] %>
+      <div class="event_btns">
+        <div class="event_btn">
+          <%= link_to "編集", edit_event_path(event.id),class: "event_edit_link" %><br/>
+        </div>
+        <div class="event_btn">
+        <%= link_to "削除", event_path(event.id), data: {turbo_method: :delete},class: "event_delete_link" %>
+        </div>
+      </div>
+    <% elsif current_user != event.user %>
+      <div class="favorite">♡</div>
+    <% end %>
+  </div>
+</div>
