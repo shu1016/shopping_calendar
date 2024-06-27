@@ -1,0 +1,91 @@
+.login_main_view {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  background-color: beige;
+}
+
+.login_main {
+  width: 400px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.field {
+  width: 400px;
+  margin: 10px 0;
+  border-bottom: 1px dotted black;
+}
+
+.login_form {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.login_submit {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.signup_main_view {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  background-color: beige;
+}
+
+.signup_main {
+  width: 400px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.signup_address {
+  display: flex;
+}
+
+.signup_region {
+  width: 125px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.signup_city {
+  width: calc(100% - 125px);
+  text-align: center;
+}
+
+.region_form {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.city_form {
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.signup_form{
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px;
+}

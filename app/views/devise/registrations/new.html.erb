@@ -1,44 +1,49 @@
-<h2>Sign up</h2>
+<div class="signup_main_view">
+  <div class="signup_main">新規登録
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field">
+        <%= f.label "ニックネーム" %><br />
+        <%= f.text_field :nickname, autocomplete: "Nickname",class: "signup_form",class: "signup_form" %>
+      </div>
 
-  <div class="field">
-    <%= f.label "ニックネーム" %><br />
-    <%= f.text_field :nickname, autocomplete: "Nickname" %>
+      <div class="field">
+        <%= f.label "メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "signup_form" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "パスワード" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password",class: "signup_form" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "パスワード確認" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "signup_form" %>
+      </div>
+
+      <div class="field">
+        <div class="signup_address">
+          <div class="signup_region">
+            <%= f.label "都道府県" %><br />
+            <%= f.collection_select(:region_id, Region.all, :id, :name, {}, class: "region_form") %>
+          </div>
+          <div class="signup_city">
+            <%= f.label "市町村" %><br />
+            <%= f.text_field :city, autocomplete: "City", class: "city_form" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録", class: "login_submit" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="field">
-    <%= f.label "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "パスワード確認" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "県" %><br />
-    <%= f.collection_select(:region_id, Region.all, :id, :name, {}) %>
-  </div>
-
-  <div class="field">
-    <%= f.label "市" %><br />
-    <%= f.text_field :city, autocomplete: "City" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
