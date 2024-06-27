@@ -1,30 +1,14 @@
 <%= render "shared/header"%>
 
-<%= form_with(model: @event, local: true) do |form| %>
+<div class="event_contents_main">
+  <div class="event_contents">
+    <%= form_with(model: @event, local: true) do |form| %>
+      <%= render "shared/eventform", form: form %>
 
-  <div class="title">
-    <%= form.label :"店名" %>
-    <%= form.text_field :title %>
+      <div class="event_submit">
+        <%= form.submit value:"メモ投稿", class: "submit_btn" %>
+      </div>
+
+    <% end %>
   </div>
-
-  <div class="time">
-    <%= form.label :"開始日" %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  <div class="time">
-    <%= form.label :"終了日" %>
-    <%= form.datetime_select :end_time %>
-  </div>
-
-  <div class="content">
-    <%= form.label :"イベント内容" %>
-    <%= form.text_field :content %>
-  </div>
-
-
-  <div class="submit">
-    <%= form.submit value:"メモ投稿" %>
-  </div>
-
-<% end %>
+</div>

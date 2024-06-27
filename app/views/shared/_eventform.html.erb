@@ -1,0 +1,37 @@
+<% form = local_assigns[:form] %>
+
+<div class="event_titles">
+  <div class="event_title">
+    店名
+  </div>
+  <div class="event_title_main">
+    <%= form.text_field :title, class: "event_title_field" %>
+  </div>
+</div>
+
+<div class="event_times">
+  <div class="event_time">
+    開始日
+  </div>
+  <div class="event_time_main">
+    <%= form.date_select :start_time, use_month_numbers: true %>
+  </div>
+</div>
+
+<div class="event_times">
+  <div class="event_time">
+    終了日
+  </div>
+  <div class="event_time_main">
+    <%= form.date_select :end_time, use_month_numbers: true%>
+  </div>
+</div>
+
+<div class="event_form_contents">
+  <div class="event_content">
+    イベント<br/>内容
+  </div>
+  <div class="event_content_main">
+    <%= form.text_field :content, class: "event_content_field" %>
+  </div>
+</div>
