@@ -19,24 +19,11 @@
         </div>
       <% end %>
     </div>
-    <% if current_user == event.user && local_assigns[:show_actions] %>
-      <div class="event_btns">
-        <%= link_to edit_event_path(event.id), class: "event_edit_link" do %>
-          <div class="event_btn_edit">
-            編集
-          </div>
-        <% end %>
-        <%= link_to event_path(event.id), data: {turbo_method: :delete},class: "event_delete_link" do %>
-          <div class="event_btn_delete">
-            削除
-          </div>
-        <% end %>
-      </div>
-    <% elsif current_user != event.user && event.favorited_by?(current_user) %>
+    <% if current_user != event.user && event.favorited_by?(current_user) %>
       <div class="favorite">
         <%= link_to "★", event_favorites_path(event.id), data: { turbo_method: :delete }, class: "event_favorites" %>
       </div>
-    <% else %>
+    <% elsif current_user != event.user && !event.favorited_by?(current_user) %>
       <div class="favorite">
         <%= link_to "☆", event_favorites_path(event.id), data: { turbo_method: :post }, class: "event_favorites" %>
       </div>

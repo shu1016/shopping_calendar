@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @events = Event.all
+    @favorites = current_user.favorites
   end
 
   def show

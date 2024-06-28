@@ -4,8 +4,13 @@
   <%= date.day %>
     <div class="calendar_day_titles">
       <% @events.each do |event| %>
-        <% if (event.start_time.to_date..event.end_time.to_date).cover?(date) && event.user_id == current_user.id %></li>
-          <li><%= link_to event.title, event_path(event.id),class:"calendar_event_title" %>
+        <% if (event.start_time.to_date..event.end_time.to_date).cover?(date) && event.user_id == current_user.id %>
+          <li><%= link_to event.title, event_path(event.id),class:"calendar_event_title" %></li>
+        <% end %>
+      <% end %>
+      <% @favorites.each do |favorite| %>
+        <% if (favorite.event.start_time.to_date..favorite.event.end_time.to_date).cover?(date) && favorite.user_id == current_user.id %>
+          <li><%= link_to favorite.event.title, event_path(favorite.event.id),class:"calendar_event_title" %></li>
         <% end %>
       <% end %>
     </div>
