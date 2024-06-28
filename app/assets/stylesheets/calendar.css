@@ -1,0 +1,13 @@
+.calendar_event_title{
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.event_day_titles {
+  height: 50px;
+}
+

@@ -53,8 +53,14 @@
 }
 
 .nav-bar {
-  margin-right: 30px;
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-elements {
+  margin-right: 30px;
+  height: 50%;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -72,7 +78,7 @@
 .memo_new, .user_name, .logout, .memo_all {
   text-decoration: none; /* noneを指定すると下線が消えます */
   color: black; /* ここに任意の色を指定します */
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .calendar-heading {
@@ -81,5 +87,78 @@
   margin: 15px 0;
   display: flex;
   justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
+.lists_memo {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+}
+
+.memo_more {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.memo_new :hover {
+  background-color: lightgreen;
+}
+
+.memo_all :hover {
+  background-color: lightsalmon;
+}
+
+.new_memo_btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 2px;
+}
+
+.all_memo_btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.mypage_btn {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  
+}
+
+.mypage_btn:hover {
+  background-color: lightblue;
+}
+
+.logout_btn {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.logout_btn:hover {
+  background-color: lightcoral;
+}
+
+.event_title {
+  text-decoration: none; /* noneを指定すると下線が消えます */
+  color: black; /* ここに任意の色を指定します */
+  font-size: 2vh;
 }
 

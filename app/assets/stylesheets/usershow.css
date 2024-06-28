@@ -68,6 +68,7 @@
   height: 50px;
   border-bottom: 1px dotted black;
   margin-bottom: 10px;
+  align-items: end;
 }
 
 .event-box_header {
@@ -81,30 +82,37 @@
 }
 
 .event-title {
-  width: 100px;
-  height: 50px;
+  width: 150px;
   text-align: center;
-  line-height: 5;
 }
 
 .event-content-main {
   width: 300px;
-  line-height: 5;
   text-align: center;
+  margin: 0 20px;
 }
 
 .start_time_only {
-  width: 200px;
-  text-align: center;
-  line-height: 5;
-}
-
-.event-content {
-  width: 200px;
+  width: 150px;
   text-align: center;
 }
 
-.event_btn {
+.start_end_time {
+  width: 150px;
+  text-align: center;
+}
+
+.event_btn_edit {
+  text-align: center;
+  margin-right: 50px;
+  background-color: gray;
+  border-radius: 5px;
+  width: 100px;
+  height: 20px;
+  margin: 3px 0;
+}
+
+.event_btn_delete {
   text-align: center;
   margin-right: 50px;
   background-color: gray;
@@ -119,17 +127,49 @@
   color: azure;
 }
 
+.event_btn_edit:hover {
+  background-color: lightblue;
+}
+
 .event_delete_link {
   text-decoration: none;
   color: darkred;  
 }
 
+.event_btn_delete:hover {
+  background-color: lightcoral;
+}
+
+
 .event-content_label {
   width: 200px;
   text-align: center;
-  line-height: 5;
 }
 
 .favorite{
   font-size: 30px;
+}
+
+.event-title-header {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  line-height: 5;
+}
+
+.event-content-main-header {
+  width: 300px;
+  line-height: 5;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.event-content_label-header {
+  width: 150px;
+  text-align: center;
+  line-height: 5;
+}
+
+.user_edit_btn:hover {
+  background-color: lightblue;
 }

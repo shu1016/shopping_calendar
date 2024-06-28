@@ -21,9 +21,11 @@
         </div>
       </div>
     </div>
-    <div class="user_edit_btn">
-      <%= link_to "編集", edit_user_path(current_user),class: "user_edit_link" %>
-    </div>
+    <%= link_to edit_user_path(current_user),class: "user_edit_link" do %>
+      <div class="user_edit_btn">
+        編集
+      </div>
+    <% end %>
   </div>
 </div>
 <br/>

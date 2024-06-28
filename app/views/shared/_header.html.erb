@@ -7,12 +7,40 @@
     </div>
     <div class="right-menu">
       <div class="nav-bar">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="lists">
-          <li><%= link_to '新規メモ', new_event_path, class: "memo_new" %> </li>
-          <li><%= link_to 'メモ一覧', events_path, class: "memo_all" %> </li>
-          <li><%= link_to current_user.nickname, user_path(current_user), class: "user_name" %> </li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %> </li>
+        <ul class="nav-elements">
+          <li class="memo_more" id="memo-menu">
+            MEMO
+            <ul class="lists_memo hidden" id="memo-pull-down">
+              <li>
+                <%= link_to new_event_path, class: "memo_new" do %> 
+                  <div class="new_memo_btn">
+                    新規メモ
+                  </div>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to events_path, class: "memo_all" do %> 
+                  <div class="all_memo_btn">
+                    メモ一覧
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to user_path(current_user), class: "user_name" do %> 
+              <div class="mypage_btn">
+                <%= current_user.nickname %>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" do %> 
+              <div class="logout_btn">
+                ログアウト
+              </div>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
