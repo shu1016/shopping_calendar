@@ -32,8 +32,14 @@
           </div>
         <% end %>
       </div>
-    <% elsif current_user != event.user %>
-      <div class="favorite">☆</div>
+    <% elsif current_user != event.user && event.favorited_by?(current_user) %>
+      <div class="favorite">
+        <%= link_to "★", event_favorites_path(event.id), data: { turbo_method: :delete }, class: "event_favorites" %>
+      </div>
+    <% else %>
+      <div class="favorite">
+        <%= link_to "☆", event_favorites_path(event.id), data: { turbo_method: :post }, class: "event_favorites" %>
+      </div>
     <% end %>
   </div>
 </div>

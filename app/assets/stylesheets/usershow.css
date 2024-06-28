@@ -173,3 +173,10 @@
 .user_edit_btn:hover {
   background-color: lightblue;
 }
+
+
+.event_favorites {
+  text-decoration: none;
+  color: yellow;
+  -webkit-text-stroke: 1px black;
+}
