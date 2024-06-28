@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: "devise/sessions#new"
   end
-  resources :users, only: [:index, :show, :edit, :update] 
-  resources :events
-  
-  
-
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :events do
+    resource :favorites, only: [:create, :destroy]
+  end
 end
