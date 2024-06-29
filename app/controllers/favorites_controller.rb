@@ -1,10 +1,11 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_event
 
   def create
     favorite = current_user.favorites.build(event_id: params[:event_id])
     favorite.save
-    redirect_to events_path
+    render partial: 'favorites/eventsindex', locals: { event: @event }
   end
 
   def destroy
@@ -13,8 +14,12 @@ class FavoritesController < ApplicationController
     if params[:redirection] == 'user'
       redirect_to user_path(current_user)
     else
-      redirect_to events_path
+      render partial: 'favorites/eventsindex', locals: { event: @event }
     end
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 
 

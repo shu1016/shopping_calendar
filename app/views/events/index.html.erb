@@ -3,6 +3,6 @@
 <div class="events">
   <%= render "shared/event_header" %>
   <% @events.each do |event| %>
-    <%= render "shared/eventsindex", event: event %>
+    <%= render "favorites/eventsindex", event: event %>
   <% end %>
 </div>

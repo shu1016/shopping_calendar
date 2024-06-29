@@ -1,0 +1,36 @@
+<% form = local_assigns[:event] %>
+
+<div class="event_boxes">
+  <div class="event-box">
+    <div class="event-title">
+      <%= event.title %>
+    </div>
+    <div class="event-content-main">
+      <%= event.content %> 
+    </div>
+    <div class="event-content">
+      <% if event.start_time == event.end_time %>
+        <div class="start_time_only">
+          <%= event.start_time %>
+        </div>
+      <% else %>
+        <div class="start_end_time">
+          <%= event.start_time %> <br/>～ <%= event.end_time %>
+        </div>
+      <% end %>
+    </div>
+    <div id = "favorite_btn<%= event.id %>">
+      <%= turbo_frame_tag dom_id(event, :favorite) do %>
+        <% if current_user != event.user && event.favorited_by?(current_user) %>
+          <div class="favorite" >
+            <%= link_to "★", event_favorites_path(event.id),redirection: 'event', data: { turbo_method: :delete }, class: "event_favorites", remote: true %>
+          </div>
+        <% elsif current_user != event.user && !event.favorited_by?(current_user) %>
+          <div class="favorite">
+            <%= link_to "☆", event_favorites_path(event.id), data: { turbo_method: :post }, class: "event_favorites", remote: true %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

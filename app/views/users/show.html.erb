@@ -38,7 +38,7 @@
 <br/>
 <p class="user-events-all"><%= @user.nickname %>さんのお気に入り一覧</p>
 <%= render "shared/event_header" %>
-  <% @favorites.each do |favorite| %>
+<% @favorites.each do |favorite| %>
   <div class="event_boxes">
     <div class="event-box">
       <div class="event-title">
@@ -65,4 +65,4 @@
         <% end %>
     </div>
   </div>
-  <% end %>
+<% end %>
