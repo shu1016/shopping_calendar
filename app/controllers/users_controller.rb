@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @events = current_user.events
+    @favorites = current_user.favorites
 
     favorites = Favorite.where(user_id: current_user.id).pluck(:event_id)
     @favrite_list = Event.find(favorites)

@@ -10,7 +10,6 @@
 }
 
 
-
 .user_nickname_box{
   display: flex;
   justify-content: center;
@@ -104,22 +103,20 @@
 
 .event_btn_edit {
   text-align: center;
-  margin-right: 50px;
   background-color: gray;
   border-radius: 5px;
-  width: 100px;
+  width: 50px;
   height: 20px;
-  margin: 3px 0;
+  margin: 3px 0 3px 10px;
 }
 
 .event_btn_delete {
   text-align: center;
-  margin-right: 50px;
   background-color: gray;
   border-radius: 5px;
-  width: 100px;
+  width: 50px;
   height: 20px;
-  margin: 3px 0;
+  margin: 3px 0 3px 10px;
 }
 
 .event_edit_link {

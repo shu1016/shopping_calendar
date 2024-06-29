@@ -10,7 +10,11 @@ class FavoritesController < ApplicationController
   def destroy
     favorite = Favorite.find_by(event_id: params[:event_id], user_id: current_user.id )
     favorite.destroy
-    redirect_to events_path
+    if params[:redirection] == 'user'
+      redirect_to user_path(current_user)
+    else
+      redirect_to events_path
+    end
   end
 
 

@@ -30,11 +30,39 @@
 </div>
 <br/>
 <br/>
-
 <p class="user-events-all"><%= @user.nickname %>さんの投稿一覧</p>
-<br/>
 <%= render "shared/event_header" %>
-
-<% @events.each do |event| %>
-  <%= render "shared/eventsindex", event: event, show_actions: true %>
-<% end %>
+  <% @events.each do |event| %>
+    <%= render "shared/user_event_show", event: event, show_actions: true %>
+  <% end %>
+<br/>
+<p class="user-events-all"><%= @user.nickname %>さんのお気に入り一覧</p>
+<%= render "shared/event_header" %>
+  <% @favorites.each do |favorite| %>
+  <div class="event_boxes">
+    <div class="event-box">
+      <div class="event-title">
+        <%= favorite.event.title %>
+      </div>
+      <div class="event-content-main">
+        <%= favorite.event.content %> 
+      </div>
+      <div class="event-content">
+        <% if favorite.event.start_time == favorite.event.end_time %>
+          <div class="start_time_only">
+            <%= favorite.event.start_time %>
+          </div>
+        <% else %>
+          <div class="start_end_time">
+            <%= favorite.event.start_time %> <br/>～ <%= event.end_time %>
+          </div>
+        <% end %>
+      </div>
+        <% if favorite.event.favorited_by?(current_user) %>
+          <div class="favorite">
+            <%= link_to "★", event_favorites_path(favorite.event.id, redirection: 'user'), data: { turbo_method: :delete }, class: "event_favorites" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <% end %>

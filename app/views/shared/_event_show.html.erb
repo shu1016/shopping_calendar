@@ -17,7 +17,7 @@
         </div>
       <% end %>
     </div>
-    <% if current_user == @event.user && local_assigns[:show_actions] %>
+    <% if current_user == @event.user %>
       <div class="event_btns">
         <%= link_to edit_event_path(@event.id), class: "event_edit_link" do %>
           <div class="event_btn_edit">
@@ -30,8 +30,6 @@
           </div>
         <% end %>
       </div>
-    <% elsif current_user != @event.user %>
-      <div class="favorite">☆</div>
     <% end %>
   </div>
 </div>
