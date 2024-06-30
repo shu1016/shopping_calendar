@@ -1,10 +1,12 @@
 <%= render "shared/header"%>
 
-<%= search_form_for @q, url: search_events_path do |f| %>
-  <%= f.select :user_region_id_eq, Region.all.map { |p| [p.name, p.id] }, prompt: "都道府県を選択" %>
-  <%= f.search_field :user_city_cont, placeholder: "市区町村を入力" %>
-  <%= f.submit "検索" %>
-<% end %>
+<div class="search_forms">
+  <%= search_form_for @q, url: search_events_path do |f| %>
+    <%= f.select :user_region_id_eq, Region.all.map { |p| [p.name, p.id] }, prompt: "都道府県を選択" %>
+    <%= f.search_field :user_city_cont, placeholder: "市区町村を入力" %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
 
 <div class="events">
   <%= render "shared/event_header" %>

@@ -161,3 +161,8 @@
   color: black; /* ここに任意の色を指定します */
   font-size: 2vh;
 }
+
+.search_forms{
+  text-align: center;
+  margin-top: 30px;
+}
