@@ -16,4 +16,13 @@ class Event < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["content", "created_at", "end_time", "id", "start_time", "title", "updated_at", "user_id"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["favorites", "user"]
+  end
+
 end

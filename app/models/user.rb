@@ -16,4 +16,9 @@ class User < ApplicationRecord
   belongs_to :region
 
   validates :region_id, numericality: { other_than: 1 , message: "can't be blank"}
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["city", "created_at", "email", "encrypted_password", "id", "nickname", "region_id", "remember_created_at", "reset_password_sent_at", "reset_password_token", "updated_at"]
+  end
+  
 end

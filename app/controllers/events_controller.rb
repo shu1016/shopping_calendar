@@ -6,7 +6,8 @@ class EventsController < ApplicationController
 
 
   def index
-    @events = Event.includes(:user).where('start_time >= ?', DateTime.now.beginning_of_day).order(:start_time)
+    @q = Event.includes(:user).where('start_time >= ?', DateTime.now.beginning_of_day).ransack(params[:q])
+    @events = @q.result(distinct: true).order(:start_time)
   end
 
   def new
@@ -41,6 +42,12 @@ class EventsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def search
+    @q = Event.ransack(search_params)
+    @events = @q.result(distinct: true).includes(:user).where('start_time >= ?', DateTime.now.beginning_of_day).order(:start_time)
+  end
+
+
   private
   def event_params
     params.require(:event).permit(:title, :start_time, :end_time, :content).merge(user_id: current_user.id)
@@ -54,6 +61,10 @@ class EventsController < ApplicationController
     if current_user != @event.user
       redirect_to users_path
     end
+  end
+
+  def search_params
+    params.require(:q).permit(:user_region_id_eq, :user_city_cont)
   end
 
 end

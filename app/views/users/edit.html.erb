@@ -1,27 +1,35 @@
 <%= render "shared/header"%>
 
-<%= form_with model: @user, local: true do |f| %>
-  <div class="field">
-    <%= f.label "ニックネーム" %><br />
-    <%= f.text_field :nickname, autocomplete: "Nickname" %>
-  </div>
+<div class="signup_main_view">
+  <div class="signup_main">ユーザー情報変更
+    <%= form_with model: @user, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="field">
+        <%= f.label "ニックネーム" %><br />
+        <%= f.text_field :nickname, autocomplete: "Nickname",class: "signup_form",class: "signup_form" %>
+      </div>
 
-  <div class="field">
-    <%= f.label "県" %><br />
-    <%= f.collection_select(:region_id, Region.all, :id, :name, {}) %>
-  </div>
+      <div class="field">
+        <%= f.label "メールアドレス" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "signup_form" %>
+      </div>
 
-  <div class="field">
-    <%= f.label "市" %><br />
-    <%= f.text_field :city, autocomplete: "City" %>
-  </div>
+      <div class="field">
+        <div class="signup_address">
+          <div class="signup_region">
+            <%= f.label "都道府県" %><br />
+            <%= f.collection_select(:region_id, Region.all, :id, :name, {}, class: "region_form") %>
+          </div>
+          <div class="signup_city">
+            <%= f.label "市町村" %><br />
+            <%= f.text_field :city, autocomplete: "City", class: "city_form" %>
+          </div>
+        </div>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+      <div class="actions">
+        <%= f.submit "更新", class: "login_submit" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
