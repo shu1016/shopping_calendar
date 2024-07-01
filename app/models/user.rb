@@ -9,7 +9,7 @@ class User < ApplicationRecord
   
 
   
-  validates :nickname, presence: true
+  validates :nickname, presence: true, length: {maximum: 6}
   validates :city, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
