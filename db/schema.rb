@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_06_28_092914) do
-  create_table "events", charset: "utf8mb4", force: :cascade do |t|
+  create_table "events", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "content", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_28_092914) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
+  create_table "favorites", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
     t.datetime "created_at", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_28_092914) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.integer "region_id", null: false
     t.string "city", null: false
