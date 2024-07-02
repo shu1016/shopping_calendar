@@ -4,13 +4,54 @@
   <%= date.day %>
     <div class="calendar_day_titles">
       <% @events.each do |event| %>
-        <% if (event.start_time.to_date..event.end_time.to_date).cover?(date) && event.user_id == current_user.id %>
-          <li><%= link_to event.title, event_path(event.id),class:"calendar_event_title" %></li>
-        <% end %>
+          <% if (event.start_time.to_date..event.end_time.to_date).cover?(date) && event.user_id == current_user.id %>
+          <div class="js-modal-button">
+            <li><%= link_to event.title, "#",class:"calendar_event_title" %></li>
+          </div>
+          <div class="layer js-modal">
+              <div class="modal">
+                <div class="modal__inner">
+                  <div class="modal__button-wrap">
+                    <button class="close-button js-close-button">
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                  <div class="modal__contents">
+                    <div class="modal__content">
+                      日付: <%= event.start_time%> 場所: <%= event.title %><br/>
+                      内容: <%= event.content%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
       <% end %>
+      
       <% @favorites.each do |favorite| %>
         <% if (favorite.event.start_time.to_date..favorite.event.end_time.to_date).cover?(date) && favorite.user_id == current_user.id %>
-          <li><%= link_to favorite.event.title, event_path(favorite.event.id),class:"calendar_event_title" %></li>
+          <div class="js-modal-button">
+            <li><%= link_to favorite.event.title, "#",class:"calendar_event_title" %></li>
+          </div>
+          <div class="layer js-modal">
+              <div class="modal">
+                <div class="modal__inner">
+                  <div class="modal__button-wrap">
+                    <button class="close-button js-close-button">
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                  <div class="modal__contents">
+                    <div class="modal__content">
+                      日付: <%= favorite.event.start_time %> 場所: <%= favorite.event.title %><br/>
+                      内容: <%= favorite.event.content %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
