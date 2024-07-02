@@ -1,25 +1,20 @@
 .layer {
-  background: rgba(0, 0, 0, .2); /* 背景を薄くする */
-  width: 100%;
-  height: 100%;
-  position: fixed; /* 画面に固定するために指定 */
-  top: 0;
-  left: 0;
-    /* 追記 */
-  z-index: -1; 
-  opacity: 0;
-  visibility: hidden;
+  position: relative;
 }
+
+
 
 /* モーダルコンテンツ */
 .modal {
-  position: relative;
+  position: fixed;
   margin-right: auto;
   margin-left: auto;
   width: 500px;
   min-width: 440px;
+  height: 0;
   opacity: 0;
   visibility: hidden;
+  background-color: aqua;
 }
 
 .modal__inner {
@@ -29,10 +24,10 @@
   margin-left: auto;
   margin-right: auto;
   background: #fff;
-  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);/* モーダルにシャドウをかける */
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.1);/* モーダルにシャドウをかける */
   border-radius: 13px; /* モーダルの角を丸める */
   display: block;
-  padding: 21px 8px 21px;
+  padding: 10px 8px 10px;
   height: auto;
 }
 
@@ -79,13 +74,10 @@
   transform: rotate(-45deg) translate(1px, -1px);
 }
 
-.layer.is-open {
-  z-index: 999;
-  opacity: 1;
-  visibility: visible;
-}
 
 .layer.is-open .modal{
-  opacity: 1;
+  opacity: 2;
   visibility: visible;
+  position: absolute;
+  top: -220px;
 }

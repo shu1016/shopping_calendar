@@ -11,3 +11,10 @@ li {
   height: 50px;
 }
 
+.js-modal-button:hover{
+  background-color: lightgray;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  text-align: center;
+}
+
