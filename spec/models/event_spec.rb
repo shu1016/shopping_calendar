@@ -32,6 +32,11 @@ RSpec.describe Event, type: :model do
         @event.valid?
         expect(@event.errors.full_messages).to include("End time 開始日より遅い日を設定してください")
       end
+      it 'user_idが空では登録できない' do
+        @event.user = nil
+        @event.valid?
+        expect(@event.errors.full_messages).to include("User must exist")
+      end
     end
   end
 end
