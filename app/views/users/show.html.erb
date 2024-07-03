@@ -1,7 +1,7 @@
 <%= render "shared/header"%>
 
 <div class="user-profile_box">
-  <div class="user-profile">基本情報
+  <div class="user-profile"><h1>基本情報</h1>
     <div class="user_nickname_box">
       <div class="category-box">ニックネーム</div>
       <div class="user-nickname">
@@ -30,13 +30,13 @@
 </div>
 <br/>
 <br/>
-<p class="user-events-all"><%= @user.nickname %>さんの投稿一覧</p>
+<div class="user-events-all"><h1><%= @user.nickname %>さんの投稿一覧</h1></div>
 <%= render "shared/event_header" %>
   <% @events.each do |event| %>
     <%= render "shared/user_event_show", event: event, show_actions: true %>
   <% end %>
 <br/>
-<p class="user-events-all"><%= @user.nickname %>さんのお気に入り一覧</p>
+<div class="user-events-all"><h1><%= @user.nickname %>さんのお気に入り一覧</h1></div>
 <%= render "shared/event_header" %>
 <% @favorites.each do |favorite| %>
   <div class="event_boxes">
