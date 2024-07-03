@@ -11,6 +11,7 @@ class User < ApplicationRecord
   
   validates :nickname, presence: true, length: {maximum: 6}
   validates :city, presence: true
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :region

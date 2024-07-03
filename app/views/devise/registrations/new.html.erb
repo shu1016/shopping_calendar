@@ -4,7 +4,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label "ニックネーム" %><br />
+        <%= f.label "ニックネーム ( 6文字以内 ) " %><br />
         <%= f.text_field :nickname, autocomplete: "Nickname",class: "signup_form",class: "signup_form" %>
       </div>
 
@@ -16,7 +16,7 @@
       <div class="field">
         <%= f.label "パスワード" %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <em>( <%= @minimum_password_length %>文字以上 ) <br/>※英字と数字の両方を含めて設定してください</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password",class: "signup_form" %>
       </div>
