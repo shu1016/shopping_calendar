@@ -3,6 +3,7 @@
 <div class="event_contents_main">
   <div class="event_contents">
     <%= form_with(model: @event, local: true) do |form| %>
+    <%= render 'shared/error_messages', model: form.object %>
       <%= render "shared/eventform", form: form %>
 
       <div class="event_submit">
