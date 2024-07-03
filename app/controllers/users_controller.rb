@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_user, only: [:edit, :show, :update]
-  before_action :move_to_index, only: [:edit, :show]
+  before_action :set_user, only: :show
+  before_action :move_to_index, only: :show
   
 
   def index
@@ -15,22 +14,8 @@ class UsersController < ApplicationController
     @favorites = current_user.favorites.includes(:event).order('events.start_time')
   end
 
-  def edit
-  end
-
-  def update
-    if @user.update(user_params)
-      redirect_to user_path(current_user)
-    else
-      render :show, status: :unprocessable_entity
-    end
-  end
 
   private
-
-  def user_params
-    params.require(:user).permit(:nickname, :email, :region_id, :city)
-  end
 
   def set_user
     @user = User.find(params[:id])
