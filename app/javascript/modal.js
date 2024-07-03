@@ -8,7 +8,6 @@ document.addEventListener("turbo:load", function() {
       e.preventDefault()
       modals[index].classList.add('is-open');
       const x = e.clientX;
-      console.log (e.clientX)
 
       if (x > window.innerWidth / 2.6){
         modals[index].style.right = '336px';
