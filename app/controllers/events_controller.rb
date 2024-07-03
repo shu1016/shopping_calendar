@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
 
   def index
-    @q = Event.includes(:user).where('start_time >= ?', DateTime.now.beginning_of_day).ransack(params[:q])
+    @q = Event.includes(:user).where('end_time >= ?', DateTime.now.beginning_of_day).ransack(params[:q])
     @events = @q.result(distinct: true).order(:start_time)
   end
 
