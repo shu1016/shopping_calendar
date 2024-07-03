@@ -11,11 +11,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @events = current_user.events
-    @favorites = current_user.favorites
-
-    favorites = Favorite.where(user_id: current_user.id).pluck(:event_id)
-    @favrite_list = Event.find(favorites)
+    @events = current_user.events.order(:start_time)
+    @favorites = current_user.favorites.includes(:event).order('events.start_time')
   end
 
   def edit
