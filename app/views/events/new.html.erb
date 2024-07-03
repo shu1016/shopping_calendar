@@ -1,6 +1,7 @@
 <%= render "shared/header"%>
 
 <div class="event_contents_main">
+  
   <div class="event_contents">
     <%= form_with(model: @event, local: true) do |form| %>
       <%= render 'shared/error_messages', model: form.object %>
@@ -8,6 +9,9 @@
       
       <div class="event_submit">
         <%= form.submit value:"メモ投稿", class: "submit_btn" %>
+      </div>
+      <div class="back_btn">
+        <%= link_to "戻る", :back, class: "back_btn" %>
       </div>
 
     <% end %>

@@ -166,3 +166,9 @@
   text-align: center;
   margin-top: 30px;
 }
+
+.back_btn {
+  width: 100%;
+  text-align: right;
+  font-size: 20px;
+}
