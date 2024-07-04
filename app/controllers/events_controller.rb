@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
 
 
@@ -21,9 +21,6 @@ class EventsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
   end
 
   def edit
