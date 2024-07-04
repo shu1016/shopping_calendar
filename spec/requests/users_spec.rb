@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe UsersController, type: :request do
+RSpec.describe UsersController, type: :request do
   
   before do
     @user = FactoryBot.create(:user)

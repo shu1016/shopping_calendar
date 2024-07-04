@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe EventsController, type: :request do
+RSpec.describe EventsController, type: :request do
 
   before do
     @user = FactoryBot.create(:user)
