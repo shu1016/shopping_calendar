@@ -1,3 +1,4 @@
+
 .event_contents_main {
   width: 100vw;
   height: calc( 100vh - 100px );
@@ -7,7 +8,7 @@
 
 .event_contents {
   width: 700px;
-  height: 450px;
+  height: 500px;
   display: flex;
   justify-content: center;
   margin-top: 75px;
