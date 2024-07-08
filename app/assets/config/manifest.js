@@ -2,3 +2,8 @@
 //= link_directory ../stylesheets .css
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
+//= link new_event.mp4
+//= link event_favorite.mp4
+//= link search_events.mp4
+//= link all_events.mp4
+//= link user_show.mp4

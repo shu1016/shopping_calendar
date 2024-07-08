@@ -1,4 +1,5 @@
 <header class="header-area">
+  <% if user_signed_in? %>
   <div class="menu">
     <div class="left-menu">
       <div class="title">
@@ -44,5 +45,35 @@
         </ul>
       </div>
     </div>
+    <% else %>
+    <div class="menu">
+      <div class="top_left-menu">
+        <div class="title">
+          <%= link_to "Shopping-Calendar", root_path, class: "title_logo" %>
+        </div>
+      </div>
+      <div class="top_right-menu">
+        <div class="nav-bar">
+          <ul class="nav-elements">
+            <li>
+              <%= link_to new_user_session_path, class: "login_btn" do %> 
+                <div class="login_btn_post">
+                  ログイン
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path, class: "new_user_btn" do %> 
+                <div class="new_user_btn_post">
+                  新規登録
+                </div>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
   </div>
 </header>

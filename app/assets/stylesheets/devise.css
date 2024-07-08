@@ -1,13 +1,18 @@
 .login_main_view {
-  width: 100vw;
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  background-color: beige;
+  background-image: image-set('back_picture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .login_main {
-  width: 400px;
+  width: 450px;
+  height: 300px;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
@@ -23,7 +28,6 @@
 .login_form {
   border-radius: 5px;
   margin-bottom: 5px;
-  box-sizing: border-box;
   width: 100%;
   padding: 5px 10px;
 }
@@ -31,51 +35,59 @@
 .login_submit {
   border-radius: 5px;
   margin-bottom: 5px;
-  box-sizing: border-box;
   width: 100%;
 }
 
 .signup_main_view {
-  width: 100vw;
+  width: 100%;
+  height: calc( 100% - 100px );
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  background-color: beige;
+  padding: 30px 0 50px;
+  background-image: image-set('back_picture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .user_edit_main_view {
   width: 100%;
+  height: calc( 100vh - 100px );
   display: flex;
   justify-content: center;
-  background-color: beige;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  background-image: image-set('back_picture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .user_edit_main {
-  width: 400px;
+  width: 430px;
+  height: 570px;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 5px 10px;
 }
 
 .signup_main {
-  width: 400px;
+  width: 430px;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .signup_address {
   display: flex;
+
 }
 
 .signup_region {
   width: 125px;
   text-align: center;
-  margin-right: 10px;
+  margin: 0 10px;
 }
 
 .signup_city {

@@ -30,12 +30,22 @@
 }
 
 .left-menu {
-  width: 50%;
+  width: 60%;
   height: 100%;
 }
 
 .right-menu {
-  width: 50%;
+  width: 40%;
+  height: 100%;
+}
+
+.top_left-menu {
+  width: 70%;
+  height: 100%;
+}
+
+.top_right-menu {
+  width: 30%;
   height: 100%;
 }
 
@@ -75,7 +85,7 @@
   align-items: center;
 }
 
-.memo_new, .user_name, .logout, .memo_all {
+.memo_new, .user_name, .logout, .memo_all, .new_user_btn, .login_btn {
   text-decoration: none; /* noneを指定すると下線が消えます */
   color: black; /* ここに任意の色を指定します */
   font-size: 15px;
@@ -136,7 +146,6 @@
   line-height: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  
 }
 
 .mypage_btn:hover {
@@ -171,4 +180,30 @@
   width: 100%;
   text-align: right;
   font-size: 20px;
+}
+
+.new_user_btn_post {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.new_user_btn_post:hover {
+  background-color: lightblue;
+}
+
+.login_btn_post {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.login_btn_post:hover {
+  background-color: lightblue;
 }
