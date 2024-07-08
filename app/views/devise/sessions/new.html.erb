@@ -1,6 +1,6 @@
 <%= render "shared/header"%>
 <div class="login_main_view">
-  <div class="login_main">ログイン
+  <div class="login_main">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 

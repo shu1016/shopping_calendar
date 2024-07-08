@@ -1,9 +1,9 @@
 .login_main_view {
   width: 100%;
-  height: calc(100vh - 100px);
-  padding-top: 100px;
+  height: calc( 100vh - 100px );
   display: flex;
   justify-content: center;
+  padding: 50px 0 50px;
   background-image: image-set('back_picture.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,12 +11,12 @@
 }
 
 .login_main {
-  width: 450px;
+  width: 430px;
   height: 300px;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 .field {
@@ -43,7 +43,7 @@
   height: calc( 100% - 100px );
   display: flex;
   justify-content: center;
-  padding: 30px 0 50px;
+  padding: 50px 0 55px;
   background-image: image-set('back_picture.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,10 +52,10 @@
 
 .user_edit_main_view {
   width: 100%;
-  height: calc( 100vh - 100px );
+  height: calc( 100% - 100px );
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  padding: 30px 0 50px;
   background-image: image-set('back_picture.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -64,7 +64,6 @@
 
 .user_edit_main {
   width: 430px;
-  height: 570px;
   background-color: white;
   border: 2px solid black;
   border-radius: 10px;
