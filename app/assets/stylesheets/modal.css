@@ -90,7 +90,7 @@
   width: 100%;
   height: calc(100vh - 100px);
   color: rgb(24, 23, 23);
-  background-image: image-set('back_picture.jpg');
+  background-color: rgba(242, 164, 9, 0.086);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
