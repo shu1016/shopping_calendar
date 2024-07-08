@@ -30,12 +30,22 @@
 }
 
 .left-menu {
-  width: 50%;
+  width: 60%;
   height: 100%;
 }
 
 .right-menu {
-  width: 50%;
+  width: 40%;
+  height: 100%;
+}
+
+.top_left-menu {
+  width: 70%;
+  height: 100%;
+}
+
+.top_right-menu {
+  width: 30%;
   height: 100%;
 }
 

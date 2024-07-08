@@ -88,7 +88,7 @@
 .top_page {
   padding-top: 20px;
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 100px);
   color: rgb(24, 23, 23);
   background-image: image-set('back_picture.jpg');
   background-size: cover;
@@ -184,6 +184,7 @@
 /* モーダルコンテンツ */
 .top_modal {
   position: relative;
+  top: 40px;
   margin-right: auto;
   margin-left: auto;
   width: 80%;
@@ -209,7 +210,6 @@
 
 .top_modal__content {
   position: relative;
-  top: 500;
   padding-top: 15px;
   padding-bottom: 23px;
   background-color: white;
