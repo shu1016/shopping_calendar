@@ -1,8 +1,8 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Back'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: 'Back'), calendar.url_for_previous_view ,class: "change_month"%>
       <span class="calendar-title"><%= I18n.l(start_date, format: "%Y/%-m") %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view ,class: "change_month"%>
   </div>
 
   <table class="table table-striped">

@@ -18,3 +18,13 @@ li {
   text-align: center;
 }
 
+.change_month {
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+}
+
+.change_month:hover{
+  background-color: bisque;
+  border-radius: 5px;
+}
