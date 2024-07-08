@@ -9,9 +9,12 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # トップページに移動する
       visit root_path
       # トップページにサインアップページへ遷移するボタンがあることを確認する
-      expect(page).to have_content("新規登録")
+      expect(page).to have_content('ログイン')
+      expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
-      visit new_user_registration_path
+      find('.new_user_btn_post').click
+      sleep 1
+      expect(page).to have_current_path(new_user_registration_path)
       # ユーザー情報を入力する
       fill_in 'user[nickname]', with: @user.nickname
       fill_in 'user[email]', with: @user.email
@@ -43,9 +46,12 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # トップページに移動する
       visit root_path
       # トップページにサインアップページへ遷移するボタンがあることを確認する
-      expect(page).to have_content("新規登録")
+      expect(page).to have_content('ログイン')
+      expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
-      visit new_user_registration_path
+      find('.new_user_btn_post').click
+      sleep 1
+      expect(page).to have_current_path(new_user_registration_path)
       # ユーザー情報を入力する
       fill_in 'user[nickname]', with: ''
       fill_in 'user[email]', with: ''
@@ -86,15 +92,21 @@ RSpec.describe 'ログイン', type: :system do
     end
   end
   context 'ログインができないとき' do
-    it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
-      # トップページに移動する
+    it '誤った情報ではログインできずにログインページへ戻ってくる' do
       visit root_path
+      # ログインと新規登録のボタンが存在する
+      expect(page).to have_content('ログイン')
+      expect(page).to have_content('新規登録')
+      # ログインページへ遷移する
+      find('.login_btn_post').click
+      sleep 1
+      expect(page).to have_current_path(new_user_session_path)
       # ユーザー情報を入力する
       fill_in 'user_email', with: ''
       fill_in 'user_password', with: ''
       # ログインボタンを押してもuser#indexへ遷移しないことを確認する
       find('input[name="commit"]').click
-      expect(page).to have_current_path(root_path)
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
   context '詳細ページに遷移できる' do
