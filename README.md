@@ -42,8 +42,7 @@ Password : qwe123456
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/9e05a4a419fec6b7cac2a478c786427f.png)](https://gyazo.com/9e05a4a419fec6b7cac2a478c786427f)
 ## 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/0e33913c8e3ee7dcd82afe84d09827d1.png)](https://gyazo.com/0e33913c8e3ee7dcd82afe84d09827d1)
-
+[![Image from Gyazo](https://i.gyazo.com/88bba7baf335ce8daf9068e71e20c1ad.png)](https://gyazo.com/88bba7baf335ce8daf9068e71e20c1ad)
 </br>
 </br>
 </br>
