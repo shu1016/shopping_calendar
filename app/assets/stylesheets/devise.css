@@ -1,6 +1,7 @@
 .login_main_view {
   width: 100%;
-  height: calc( 100vh - 100px );
+  min-height: calc( 100vh - 100px );
+  height: auto;
   display: flex;
   justify-content: center;
   padding: 50px 0 50px;
@@ -40,7 +41,8 @@
 
 .signup_main_view {
   width: 100%;
-  height: calc( 100% - 100px );
+  min-height: calc( 100vh - 100px );
+  height: auto;
   display: flex;
   justify-content: center;
   padding: 50px 0 55px;
@@ -48,11 +50,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  align-items: flex-start;
 }
 
 .user_edit_main_view {
   width: 100%;
-  height: calc( 100% - 100px );
+  min-height: calc( 100vh - 100px );
+  height: auto;
   display: flex;
   justify-content: center;
   padding: 30px 0 50px;
@@ -60,6 +64,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  align-items: flex-start;
 }
 
 .user_edit_main {
