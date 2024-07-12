@@ -1,4 +1,4 @@
-document.addEventListener("turbo:load", function() {
+const topContents = () => {
   const topModals = document.querySelectorAll('.top-js-modal');
   const topModalButtons = document.querySelectorAll('.top-js-modal-button');
   const topModalCloses = document.querySelectorAll('.top-js-close-button');
@@ -22,4 +22,6 @@ document.addEventListener("turbo:load", function() {
       topModals[index].classList.remove('top_is-open');
     });
   });
-});
+};
+
+window.addEventListener('turbo:load',topContents)

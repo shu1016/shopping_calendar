@@ -1,4 +1,4 @@
-document.addEventListener("turbo:load", function() {
+const contents = () => {
   const modals = document.querySelectorAll('.js-modal');
   const modalButtons = document.querySelectorAll('.js-modal-button');
   const modalCloses = document.querySelectorAll('.js-close-button');
@@ -23,4 +23,6 @@ document.addEventListener("turbo:load", function() {
       modals[index].classList.remove('is-open');
     });
   });
-});
+};
+
+window.addEventListener('turbo:load',contents)
