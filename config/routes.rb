@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'toppages#index'
+  devise_for :users
   resources :users, only: [:index, :show]
   resources :events do
     resource :favorites, only: [:create, :destroy]
