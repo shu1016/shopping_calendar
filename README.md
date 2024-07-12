@@ -55,7 +55,7 @@ Password : qwe123456
 # テーブル設計
 
 ## users テーブル
-| Colum               | Type     | Optons                    |
+| Column              | Type     | Options                    |
 | --------------------|----------|---------------------------|
 | nickname            | string   | null: false               |
 | email               | string   | null: false, unique: true |
@@ -70,7 +70,7 @@ Password : qwe123456
 - belongs_to_active_hash :region
 
 ## eventsテーブル
-|colum            | Type          |Options                          |
+|column           | Type          |Options                          |
 |-----------------|---------------|---------------------------------|
 | user            | references    | null: false   foreign_key: true |
 | title           | string        | null: false                     |
@@ -85,7 +85,7 @@ Password : qwe123456
 
 
 ## ordersテーブル
-|colum        | Type        |Options                            |
+|column       | Type        |Options                            |
 |-------------|-------------|--------------------------------   |
 | user        | references  | null: false  foreign_key: true    |
 | item        | references  | null: false  foreign_key: true    |
