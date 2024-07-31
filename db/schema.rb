@@ -33,10 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_055925) do
 
   create_table "groups", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -57,5 +55,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_055925) do
   add_foreign_key "events", "users"
   add_foreign_key "favorites", "events"
   add_foreign_key "favorites", "users"
-  add_foreign_key "groups", "users"
 end
