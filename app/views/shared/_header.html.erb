@@ -36,6 +36,13 @@
             <% end %>
           </li>
           <li>
+            <%= link_to groups_path(current_user), class: "user_name" do %> 
+              <div class="mypage_btn">
+                グループ一覧
+              </div>
+            <% end %>
+          </li>
+          <li>
             <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" do %> 
               <div class="logout_btn">
                 ログアウト
