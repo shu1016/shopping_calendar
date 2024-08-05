@@ -1,2 +1,9 @@
 <%= render "shared/header"%>
+<li>
+  <%= link_to new_group_path(current_user), class: "user_name" do %> 
+    <div class="group_btn">
+      グループ作成
+    </div>
+  <% end %>
+</li>
 <div>確認</div>
